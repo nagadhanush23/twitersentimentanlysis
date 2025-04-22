@@ -1,0 +1,167 @@
+Here's the explanation of your **Twitter Sentiment Analysis** code in a structured format similar to a Jupyter Notebook workflow:  
+
+---
+
+### **1. Data Collection**
+#### **Function: `DownloadData()`**
+- **Input:**  
+  - A keyword or hashtag to search for  
+  - The number of tweets to fetch  
+- **Process:**  
+  - Uses the Tweepy `Client` to fetch recent tweets (excluding retweets, English only).  
+  - Stores tweets in `self.tweetText` and writes them into a CSV file.  
+- **Output:**  
+  - A CSV file (`result.csv`) containing raw tweet texts.  
+
+---
+
+### **2. Data Cleaning**
+#### **Function: `cleanTweet(tweet)`**
+- **Input:** A raw tweet text  
+- **Process:**  
+  - Uses regex to remove mentions (`@user`), special characters, and URLs.  
+  - Splits and rejoins words to return a cleaned text.  
+- **Output:** A cleaned tweet without unnecessary symbols.  
+
+Example:  
+📌 **Raw Tweet:** `"@elonmusk This is amazing! 🚀 Visit https://t.co/xyz"`  
+📌 **Cleaned Tweet:** `"This is amazing"`  
+
+---
+
+### **3. Sentiment Analysis**
+#### **Function: `DownloadData()` (Part of It)**
+- **Input:**  
+  - Cleaned tweet text  
+- **Process:**  
+  - Uses **TextBlob** to analyze the sentiment polarity of each tweet:  
+    - `polarity = TextBlob(tweet).sentiment.polarity`  
+  - Classifies sentiment into categories:  
+    - **Positive:** `polarity > 0.3`  
+    - **Weakly Positive:** `0 < polarity ≤ 0.3`  
+    - **Neutral:** `polarity == 0`  
+    - **Weakly Negative:** `-0.3 < polarity ≤ 0`  
+    - **Negative:** `-0.6 < polarity ≤ -0.3`  
+    - **Strongly Negative:** `polarity ≤ -0.6`  
+- **Output:**  
+  - A sentiment label (Positive, Negative, Neutral, etc.)  
+
+---
+
+### **4. Sentiment Distribution**
+#### **Function: `percentage(part, whole)`**
+- **Input:**  
+  - Part (count of a sentiment type)  
+  - Whole (total tweets analyzed)  
+- **Process:**  
+  - Converts the count to a percentage with **two decimal places**.  
+- **Output:** Percentage value  
+
+Example:  
+- If 10 out of 50 tweets are positive → `percentage(10, 50) → 20.00%`  
+
+---
+
+### **5. Data Visualization**
+#### **Function: `plotPieChart()`**
+- **Input:**  
+  - Percentages of different sentiment categories  
+  - Search term and total tweets  
+- **Process:**  
+  - Uses `matplotlib.pyplot` to create a **pie chart**:  
+    - Labels: `"Positive"`, `"Neutral"`, `"Negative"`, etc.  
+    - Colors: Green (Positive), Red (Negative), Gold (Neutral)  
+- **Output:**  
+  - A **pie chart** visualizing how people feel about the given topic.  
+
+📌 **Example Output Chart:**  
+✅ **50% Positive** 🟢  
+🟡 **30% Neutral**  
+❌ **20% Negative** 🔴  
+
+---
+
+### **6. Summary Report**
+#### **Part of `DownloadData()`**
+- **General Sentiment Analysis:**  
+  - Prints overall sentiment (Neutral, Positive, Negative).  
+  - Displays a **detailed breakdown** of sentiment percentages.  
+- **Example Output:**  
+```
+How people are reacting on "Tesla" by analyzing 100 tweets.
+
+General Report: Positive  
+Detailed Report:
+50% Positive, 20% Weakly Positive, 10% Strongly Positive  
+10% Negative, 5% Weakly Negative, 5% Strongly Negative  
+```
+
+---
+
+### **Final Execution**
+- Runs the `SentimentAnalysis` class and calls `DownloadData()`  
+- Takes **user input** for keyword and number of tweets  
+- Saves the **results** to a CSV file and displays **charts**  
+
+---
+
+### **Enhancements to Consider**
+- Store results in **Pandas DataFrame** for better manipulation  
+- Use **VADER Sentiment Analysis** for better tweet sentiment detection  
+- **Deploy as a Flask API** for real-time analysis  
+
+Would you like to modify it for any specific use case? 🚀
+
+The error **"429 Too Many Requests"** means that you've exceeded Twitter API’s rate limit for recent searches. Here’s how to fix it:
+
+### **Possible Solutions**
+
+#### ✅ **1. Wait and Retry Later**
+Twitter imposes a rate limit on API calls. Try again after **15 minutes** (or 900 seconds), as the limit resets periodically.
+
+#### ✅ **2. Reduce Number of Requests**
+- Right now, you're requesting **up to 100 tweets at once** (`max_results=min(NoOfTerms, 100)`).
+- Reduce it to **10 or 20 tweets** to avoid hitting the limit.
+
+```python
+tweets = client.search_recent_tweets(query=query, max_results=min(NoOfTerms, 20), tweet_fields=["text"])
+```
+
+#### ✅ **3. Use Pagination (Wait Between Calls)**
+Instead of fetching all tweets at once, **wait for a few seconds** between requests.
+
+Modify your code like this:
+
+```python
+import time
+
+for i in range(0, NoOfTerms, 20):  # Fetch 20 tweets at a time
+    tweets = client.search_recent_tweets(query=query, max_results=20, tweet_fields=["text"])
+    time.sleep(5)  # Wait for 5 seconds before making the next request
+```
+
+#### ✅ **4. Check API Usage Limits**
+Twitter API has different rate limits:
+- **Recent Search Endpoint:**  
+  - Free tier: **450 requests per 15 minutes**  
+  - Basic/Pro tiers allow more.  
+
+Use this command to check limits in Python:
+
+```python
+response = client.get_api_limits()
+print(response)
+```
+
+#### ✅ **5. Upgrade Twitter API Plan**
+If you’re using **free access**, you may be limited. Consider **Twitter API Basic or Pro** for higher limits.
+
+---
+
+### **Recommended Next Steps**
+1. Wait **15 minutes** and retry.  
+2. Reduce `max_results` to **20**.  
+3. Use `time.sleep(5)` to prevent API overload.  
+4. If this happens frequently, check Twitter API limits or upgrade your plan.
+
+Let me know if you need help modifying the code! 🚀

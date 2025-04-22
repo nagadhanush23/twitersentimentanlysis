@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: Twitter-Sentiment-Analysis
+Version: 1.0.0
+Summary: A script to analyze the sentiments of tweets related to any topic.
+Author: Chiluveru Nagadhanush
+Author-email: nagadhanush23@gmail.com
+Keywords: python twitter sentiment-analysis textblob nlp tweepy nltk
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Description-Content-Type: text/markdown
+
+# Twitter Sentiment Analysis
+This project analyzes sentiments of tweets related to any topic.

@@ -1,0 +1,422 @@
+(base) PS C:\Users\nagad\OneDrive\Desktop\twittersentimwnt anlysis> venv\Scripts\activate
+(venv) (base) PS C:\Users\nagad\OneDrive\Desktop\twittersentimwnt anlysis> pip install tweepy textblob matplotlib nltk
+Collecting tweepy
+  Downloading tweepy-4.15.0-py3-none-any.whl (99 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 99.4/99.4 kB 2.9 MB/s eta 0:00:00
+Collecting textblob
+  Downloading textblob-0.19.0-py3-none-any.whl (624 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 624.3/624.3 kB 6.5 MB/s eta 0:00:00
+Collecting matplotlib
+  Downloading matplotlib-3.10.1-cp310-cp310-win_amd64.whl (8.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 8.1/8.1 MB 11.0 MB/s eta 0:00:00
+Collecting nltk
+  Downloading nltk-3.9.1-py3-none-any.whl (1.5 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.5/1.5 MB 19.2 MB/s eta 0:00:00
+Collecting requests<3,>=2.27.0
+  Downloading requests-2.32.3-py3-none-any.whl (64 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 64.9/64.9 kB 3.4 MB/s eta 0:00:00
+Collecting oauthlib<4,>=3.2.0
+  Using cached oauthlib-3.2.2-py3-none-any.whl (151 kB)
+Collecting requests-oauthlib<3,>=1.2.0
+  Using cached requests_oauthlib-2.0.0-py2.py3-none-any.whl (24 kB)
+Collecting kiwisolver>=1.3.1
+  Downloading kiwisolver-1.4.8-cp310-cp310-win_amd64.whl (71 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 71.9/71.9 kB 2.0 MB/s eta 0:00:00
+Collecting python-dateutil>=2.7
+  Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 229.9/229.9 kB 3.5 MB/s eta 0:00:00
+Collecting numpy>=1.23
+  Downloading numpy-2.2.4-cp310-cp310-win_amd64.whl (12.9 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 12.9/12.9 MB 12.6 MB/s eta 0:00:00
+Collecting fonttools>=4.22.0
+  Downloading fonttools-4.56.0-cp310-cp310-win_amd64.whl (2.2 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.2/2.2 MB 15.5 MB/s eta 0:00:00
+Collecting cycler>=0.10
+  Using cached cycler-0.12.1-py3-none-any.whl (8.3 kB)
+Collecting packaging>=20.0
+  Downloading packaging-24.2-py3-none-any.whl (65 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 65.5/65.5 kB 3.5 MB/s eta 0:00:00
+Collecting pyparsing>=2.3.1
+  Downloading pyparsing-3.2.1-py3-none-any.whl (107 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 107.7/107.7 kB 6.5 MB/s eta 0:00:00
+Collecting pillow>=8
+  Downloading pillow-11.1.0-cp310-cp310-win_amd64.whl (2.6 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.6/2.6 MB 16.7 MB/s eta 0:00:00
+Collecting contourpy>=1.0.1
+  Downloading contourpy-1.3.1-cp310-cp310-win_amd64.whl (218 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 218.6/218.6 kB 13.0 MB/s eta 0:00:00
+Collecting tqdm
+  Downloading tqdm-4.67.1-py3-none-any.whl (78 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 78.5/78.5 kB 2.2 MB/s eta 0:00:00
+Collecting regex>=2021.8.3
+  Downloading regex-2024.11.6-cp310-cp310-win_amd64.whl (274 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 274.0/274.0 kB 8.2 MB/s eta 0:00:00
+Collecting click
+  Downloading click-8.1.8-py3-none-any.whl (98 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 98.2/98.2 kB 5.9 MB/s eta 0:00:00
+Collecting joblib
+  Downloading joblib-1.4.2-py3-none-any.whl (301 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 301.8/301.8 kB 4.7 MB/s eta 0:00:00
+Collecting six>=1.5
+  Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+Collecting idna<4,>=2.5
+  Downloading idna-3.10-py3-none-any.whl (70 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 70.4/70.4 kB 3.8 MB/s eta 0:00:00
+Collecting certifi>=2017.4.17
+  Downloading certifi-2025.1.31-py3-none-any.whl (166 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 166.4/166.4 kB 4.9 MB/s eta 0:00:00
+Collecting urllib3<3,>=1.21.1
+  Downloading urllib3-2.3.0-py3-none-any.whl (128 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 128.4/128.4 kB 3.8 MB/s eta 0:00:00
+Collecting charset-normalizer<4,>=2
+  Downloading charset_normalizer-3.4.1-cp310-cp310-win_amd64.whl (102 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 102.8/102.8 kB 6.2 MB/s eta 0:00:00
+Collecting colorama
+  Downloading colorama-0.4.6-py2.py3-none-any.whl (25 kB)
+Installing collected packages: urllib3, six, regex, pyparsing, pillow, packaging, oauthlib, numpy, kiwisolver, joblib, idna, fonttools, cycler, colorama, charset-normalizer, certifi, tqdm, requests, python-dateutil, contourpy, click, requests-oauthlib, nltk, matplotlib, tweepy, textblob
+Successfully installed certifi-2025.1.31 charset-normalizer-3.4.1 click-8.1.8 colorama-0.4.6 contourpy-1.3.1 cycler-0.12.1 fonttools-4.56.0 idna-3.10 joblib-1.4.2 kiwisolver-1.4.8 matplotlib-3.10.1 nltk-3.9.1 numpy-2.2.4 oauthlib-3.2.2 packaging-24.2 pillow-11.1.0 pyparsing-3.2.1 python-dateutil-2.9.0.post0 regex-2024.11.6 requests-2.32.3 requests-oauthlib-2.0.0 six-1.17.0 textblob-0.19.0 tqdm-4.67.1 tweepy-4.15.0 urllib3-2.3.0
+
+[notice] A new release of pip available: 22.3.1 -> 25.0.1
+[notice] To update, run: python.exe -m pip install --upgrade pip
+(venv) (base) PS C:\Users\nagad\OneDrive\Desktop\twittersentimwnt anlysis> pip list
+Package            Version
+------------------ -----------
+certifi            2025.1.31
+charset-normalizer 3.4.1
+click              8.1.8
+colorama           0.4.6
+contourpy          1.3.1
+cycler             0.12.1
+fonttools          4.56.0
+idna               3.10
+joblib             1.4.2
+kiwisolver         1.4.8
+matplotlib         3.10.1
+nltk               3.9.1
+numpy              2.2.4
+oauthlib           3.2.2
+packaging          24.2
+pillow             11.1.0
+pip                22.3.1
+pyparsing          3.2.1
+python-dateutil    2.9.0.post0
+regex              2024.11.6
+requests           2.32.3
+requests-oauthlib  2.0.0
+setuptools         65.5.0
+six                1.17.0
+textblob           0.19.0
+tqdm               4.67.1
+tweepy             4.15.0
+urllib3            2.3.0
+
+[notice] A new release of pip available: 22.3.1 -> 25.0.1
+[notice] To update, run: python.exe -m pip install --upgrade pip
+(venv) (base) PS C:\Users\nagad\OneDrive\Desktop\twittersentimwnt anlysis> 
+(venv) (base) PS C:\Users\nagad\OneDrive\Desktop\twittersentimwnt anlysis> pip freeze > requirements.txt
+(venv) (base) PS C:\Users\nagad\OneDrive\Desktop\twittersentimwnt anlysis> python setup.py install
+Traceback (most recent call last):
+  File "C:\Users\nagad\OneDrive\Desktop\twittersentimwnt anlysis\setup.py", line 8, in <module>
+    with open(path.join(here, 'README.md'), encoding='utf-8') as f:
+  File "C:\Users\nagad\anaconda3\lib\codecs.py", line 906, in open
+    file = builtins.open(filename, mode, buffering)
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\nagad\\OneDrive\\Desktop\\twittersentimwnt anlysis\\README.md'
+(venv) (base) PS C:\Users\nagad\OneDrive\Desktop\twittersentimwnt anlysis> python setup.py install
+running install
+C:\Users\nagad\OneDrive\Desktop\twittersentimwnt anlysis\venv\lib\site-packages\setuptools\command\install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+  warnings.warn(
+C:\Users\nagad\OneDrive\Desktop\twittersentimwnt anlysis\venv\lib\site-packages\setuptools\command\easy_install.py:144: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+  warnings.warn(
+running bdist_egg
+running egg_info
+creating Twitter_Sentiment_Analysis.egg-info
+writing Twitter_Sentiment_Analysis.egg-info\PKG-INFO
+writing dependency_links to Twitter_Sentiment_Analysis.egg-info\dependency_links.txt
+writing requirements to Twitter_Sentiment_Analysis.egg-info\requires.txt
+writing top-level names to Twitter_Sentiment_Analysis.egg-info\top_level.txt
+writing manifest file 'Twitter_Sentiment_Analysis.egg-info\SOURCES.txt'
+reading manifest file 'Twitter_Sentiment_Analysis.egg-info\SOURCES.txt'
+writing manifest file 'Twitter_Sentiment_Analysis.egg-info\SOURCES.txt'
+installing library code to build\bdist.win-amd64\egg
+running install_lib
+running build_py
+creating build
+creating build\lib
+copying main.py -> build\lib
+creating build\bdist.win-amd64
+creating build\bdist.win-amd64\egg
+copying build\lib\main.py -> build\bdist.win-amd64\egg
+byte-compiling build\bdist.win-amd64\egg\main.py to main.cpython-310.pyc
+creating build\bdist.win-amd64\egg\EGG-INFO
+copying Twitter_Sentiment_Analysis.egg-info\PKG-INFO -> build\bdist.win-amd64\egg\EGG-INFO
+copying Twitter_Sentiment_Analysis.egg-info\SOURCES.txt -> build\bdist.win-amd64\egg\EGG-INFO
+copying Twitter_Sentiment_Analysis.egg-info\dependency_links.txt -> build\bdist.win-amd64\egg\EGG-INFO
+copying Twitter_Sentiment_Analysis.egg-info\requires.txt -> build\bdist.win-amd64\egg\EGG-INFO
+copying Twitter_Sentiment_Analysis.egg-info\top_level.txt -> build\bdist.win-amd64\egg\EGG-INFO
+zip_safe flag not set; analyzing archive contents...
+creating dist
+creating 'dist\Twitter_Sentiment_Analysis-1.0.0-py3.10.egg' and adding 'build\bdist.win-amd64\egg' to it
+removing 'build\bdist.win-amd64\egg' (and everything under it)
+Processing Twitter_Sentiment_Analysis-1.0.0-py3.10.egg
+Copying Twitter_Sentiment_Analysis-1.0.0-py3.10.egg to c:\users\nagad\onedrive\desktop\twittersentimwnt anlysis\venv\lib\site-packages
+Adding Twitter-Sentiment-Analysis 1.0.0 to easy-install.pth file
+
+Installed c:\users\nagad\onedrive\desktop\twittersentimwnt anlysis\venv\lib\site-packages\twitter_sentiment_analysis-1.0.0-py3.10.egg
+Processing dependencies for Twitter-Sentiment-Analysis==1.0.0
+Searching for nltk==3.9.1
+Best match: nltk 3.9.1
+Adding nltk 3.9.1 to easy-install.pth file
+Installing nltk-script.py script to C:\Users\nagad\OneDrive\Desktop\twittersentimwnt anlysis\venv\Scripts
+Installing nltk.exe script to C:\Users\nagad\OneDrive\Desktop\twittersentimwnt anlysis\venv\Scripts
+
+Using c:\users\nagad\onedrive\desktop\twittersentimwnt anlysis\venv\lib\site-packages
+Searching for matplotlib==3.10.1
+Best match: matplotlib 3.10.1
+Adding matplotlib 3.10.1 to easy-install.pth file
+
+Using c:\users\nagad\onedrive\desktop\twittersentimwnt anlysis\venv\lib\site-packages
+Searching for textblob==0.19.0
+Best match: textblob 0.19.0
+Adding textblob 0.19.0 to easy-install.pth file
+
+Using c:\users\nagad\onedrive\desktop\twittersentimwnt anlysis\venv\lib\site-packages
+Searching for tweepy==4.15.0
+Best match: tweepy 4.15.0
+Adding tweepy 4.15.0 to easy-install.pth file
+
+Using c:\users\nagad\onedrive\desktop\twittersentimwnt anlysis\venv\lib\site-packages
+Searching for tqdm==4.67.1
+Best match: tqdm 4.67.1
+Adding tqdm 4.67.1 to easy-install.pth file
+Installing tqdm-script.py script to C:\Users\nagad\OneDrive\Desktop\twittersentimwnt anlysis\venv\Scripts
+Installing tqdm.exe script to C:\Users\nagad\OneDrive\Desktop\twittersentimwnt anlysis\venv\Scripts
+
+Using c:\users\nagad\onedrive\desktop\twittersentimwnt anlysis\venv\lib\site-packages
+Searching for regex==2024.11.6
+Best match: regex 2024.11.6
+Adding regex 2024.11.6 to easy-install.pth file
+
+Using c:\users\nagad\onedrive\desktop\twittersentimwnt anlysis\venv\lib\site-packages
+Searching for joblib==1.4.2
+Best match: joblib 1.4.2
+Adding joblib 1.4.2 to easy-install.pth file
+
+Using c:\users\nagad\onedrive\desktop\twittersentimwnt anlysis\venv\lib\site-packages
+Searching for click==8.1.8
+Best match: click 8.1.8
+Adding click 8.1.8 to easy-install.pth file
+
+Using c:\users\nagad\onedrive\desktop\twittersentimwnt anlysis\venv\lib\site-packages
+Searching for python-dateutil==2.9.0.post0
+Best match: python-dateutil 2.9.0.post0
+Adding python-dateutil 2.9.0.post0 to easy-install.pth file
+
+Using c:\users\nagad\onedrive\desktop\twittersentimwnt anlysis\venv\lib\site-packages
+Searching for pyparsing==3.2.1
+Best match: pyparsing 3.2.1
+Adding pyparsing 3.2.1 to easy-install.pth file
+
+Using c:\users\nagad\onedrive\desktop\twittersentimwnt anlysis\venv\lib\site-packages
+Searching for pillow==11.1.0
+Best match: pillow 11.1.0
+Adding pillow 11.1.0 to easy-install.pth file
+
+Using c:\users\nagad\onedrive\desktop\twittersentimwnt anlysis\venv\lib\site-packages
+Searching for packaging==24.2
+Best match: packaging 24.2
+Adding packaging 24.2 to easy-install.pth file
+
+Using c:\users\nagad\onedrive\desktop\twittersentimwnt anlysis\venv\lib\site-packages
+Searching for numpy==2.2.4
+Best match: numpy 2.2.4
+Adding numpy 2.2.4 to easy-install.pth file
+Installing f2py-script.py script to C:\Users\nagad\OneDrive\Desktop\twittersentimwnt anlysis\venv\Scripts
+Installing f2py.exe script to C:\Users\nagad\OneDrive\Desktop\twittersentimwnt anlysis\venv\Scripts
+Installing numpy-config-script.py script to C:\Users\nagad\OneDrive\Desktop\twittersentimwnt anlysis\venv\Scripts
+Installing numpy-config.exe script to C:\Users\nagad\OneDrive\Desktop\twittersentimwnt anlysis\venv\Scripts
+
+Using c:\users\nagad\onedrive\desktop\twittersentimwnt anlysis\venv\lib\site-packages
+Searching for kiwisolver==1.4.8
+Best match: kiwisolver 1.4.8
+Adding kiwisolver 1.4.8 to easy-install.pth file
+
+Using c:\users\nagad\onedrive\desktop\twittersentimwnt anlysis\venv\lib\site-packages
+Searching for fonttools==4.56.0
+Best match: fonttools 4.56.0
+Adding fonttools 4.56.0 to easy-install.pth file
+Installing fonttools-script.py script to C:\Users\nagad\OneDrive\Desktop\twittersentimwnt anlysis\venv\Scripts
+Installing fonttools.exe script to C:\Users\nagad\OneDrive\Desktop\twittersentimwnt anlysis\venv\Scripts
+Installing pyftmerge-script.py script to C:\Users\nagad\OneDrive\Desktop\twittersentimwnt anlysis\venv\Scripts
+Installing pyftmerge.exe script to C:\Users\nagad\OneDrive\Desktop\twittersentimwnt anlysis\venv\Scripts
+Installing pyftsubset-script.py script to C:\Users\nagad\OneDrive\Desktop\twittersentimwnt anlysis\venv\Scripts
+Installing pyftsubset.exe script to C:\Users\nagad\OneDrive\Desktop\twittersentimwnt anlysis\venv\Scripts
+Installing ttx-script.py script to C:\Users\nagad\OneDrive\Desktop\twittersentimwnt anlysis\venv\Scripts
+Installing ttx.exe script to C:\Users\nagad\OneDrive\Desktop\twittersentimwnt anlysis\venv\Scripts
+
+Using c:\users\nagad\onedrive\desktop\twittersentimwnt anlysis\venv\lib\site-packages
+Searching for cycler==0.12.1
+Best match: cycler 0.12.1
+Adding cycler 0.12.1 to easy-install.pth file
+
+Using c:\users\nagad\onedrive\desktop\twittersentimwnt anlysis\venv\lib\site-packages
+Searching for contourpy==1.3.1
+Best match: contourpy 1.3.1
+Adding contourpy 1.3.1 to easy-install.pth file
+
+Using c:\users\nagad\onedrive\desktop\twittersentimwnt anlysis\venv\lib\site-packages
+Searching for requests-oauthlib==2.0.0
+Best match: requests-oauthlib 2.0.0
+Adding requests-oauthlib 2.0.0 to easy-install.pth file
+
+Using c:\users\nagad\onedrive\desktop\twittersentimwnt anlysis\venv\lib\site-packages
+Searching for requests==2.32.3
+Best match: requests 2.32.3
+Adding requests 2.32.3 to easy-install.pth file
+
+Using c:\users\nagad\onedrive\desktop\twittersentimwnt anlysis\venv\lib\site-packages
+Searching for oauthlib==3.2.2
+Best match: oauthlib 3.2.2
+Adding oauthlib 3.2.2 to easy-install.pth file
+
+Using c:\users\nagad\onedrive\desktop\twittersentimwnt anlysis\venv\lib\site-packages
+Searching for colorama==0.4.6
+Best match: colorama 0.4.6
+Adding colorama 0.4.6 to easy-install.pth file
+
+Using c:\users\nagad\onedrive\desktop\twittersentimwnt anlysis\venv\lib\site-packages
+Searching for six==1.17.0
+Best match: six 1.17.0
+Adding six 1.17.0 to easy-install.pth file
+
+Using c:\users\nagad\onedrive\desktop\twittersentimwnt anlysis\venv\lib\site-packages
+Searching for certifi==2025.1.31
+Best match: certifi 2025.1.31
+Adding certifi 2025.1.31 to easy-install.pth file
+
+Using c:\users\nagad\onedrive\desktop\twittersentimwnt anlysis\venv\lib\site-packages
+Searching for urllib3==2.3.0
+Best match: urllib3 2.3.0
+Adding urllib3 2.3.0 to easy-install.pth file
+
+Using c:\users\nagad\onedrive\desktop\twittersentimwnt anlysis\venv\lib\site-packages
+Searching for idna==3.10
+Best match: idna 3.10
+Adding idna 3.10 to easy-install.pth file
+
+Using c:\users\nagad\onedrive\desktop\twittersentimwnt anlysis\venv\lib\site-packages
+Searching for charset-normalizer==3.4.1
+Best match: charset-normalizer 3.4.1
+Adding charset-normalizer 3.4.1 to easy-install.pth file
+Installing normalizer-script.py script to C:\Users\nagad\OneDrive\Desktop\twittersentimwnt anlysis\venv\Scripts
+Installing normalizer.exe script to C:\Users\nagad\OneDrive\Desktop\twittersentimwnt anlysis\venv\Scripts
+
+Using c:\users\nagad\onedrive\desktop\twittersentimwnt anlysis\venv\lib\site-packages
+Finished processing dependencies for Twitter-Sentiment-Analysis==1.0.0
+(venv) (base) PS C:\Users\nagad\OneDrive\Desktop\twittersentimwnt anlysis> pip install tweepy textblob matplotlib python-dotenv
+Requirement already satisfied: tweepy in c:\users\nagad\onedrive\desktop\twittersentimwnt anlysis\venv\lib\site-packages (4.15.0)
+Requirement already satisfied: textblob in c:\users\nagad\onedrive\desktop\twittersentimwnt anlysis\venv\lib\site-packages (0.19.0)
+Requirement already satisfied: matplotlib in c:\users\nagad\onedrive\desktop\twittersentimwnt anlysis\venv\lib\site-packages (3.10.1)
+Collecting python-dotenv
+  Downloading python_dotenv-1.0.1-py3-none-any.whl (19 kB)
+Requirement already satisfied: requests<3,>=2.27.0 in c:\users\nagad\onedrive\desktop\twittersentimwnt anlysis\venv\lib\site-packages (from tweepy) (2.32.3)
+Requirement already satisfied: oauthlib<4,>=3.2.0 in c:\users\nagad\onedrive\desktop\twittersentimwnt anlysis\venv\lib\site-packages (from tweepy) (3.2.2)
+Requirement already satisfied: requests-oauthlib<3,>=1.2.0 in c:\users\nagad\onedrive\desktop\twittersentimwnt anlysis\venv\lib\site-packages (from tweepy) (2.0.0)  
+Requirement already satisfied: nltk>=3.9 in c:\users\nagad\onedrive\desktop\twittersentimwnt anlysis\venv\lib\site-packages (from textblob) (3.9.1)
+Requirement already satisfied: kiwisolver>=1.3.1 in c:\users\nagad\onedrive\desktop\twittersentimwnt anlysis\venv\lib\site-packages (from matplotlib) (1.4.8)
+Requirement already satisfied: contourpy>=1.0.1 in c:\users\nagad\onedrive\desktop\twittersentimwnt anlysis\venv\lib\site-packages (from matplotlib) (1.3.1)
+Requirement already satisfied: numpy>=1.23 in c:\users\nagad\onedrive\desktop\twittersentimwnt anlysis\venv\lib\site-packages (from matplotlib) (2.2.4)
+Requirement already satisfied: python-dateutil>=2.7 in c:\users\nagad\onedrive\desktop\twittersentimwnt anlysis\venv\lib\site-packages (from matplotlib) (2.9.0.post0)
+Requirement already satisfied: pillow>=8 in c:\users\nagad\onedrive\desktop\twittersentimwnt anlysis\venv\lib\site-packages (from matplotlib) (11.1.0)
+Requirement already satisfied: cycler>=0.10 in c:\users\nagad\onedrive\desktop\twittersentimwnt anlysis\venv\lib\site-packages (from matplotlib) (0.12.1)
+Requirement already satisfied: fonttools>=4.22.0 in c:\users\nagad\onedrive\desktop\twittersentimwnt anlysis\venv\lib\site-packages (from matplotlib) (4.56.0)       
+Requirement already satisfied: packaging>=20.0 in c:\users\nagad\onedrive\desktop\twittersentimwnt anlysis\venv\lib\site-packages (from matplotlib) (24.2)
+Requirement already satisfied: pyparsing>=2.3.1 in c:\users\nagad\onedrive\desktop\twittersentimwnt anlysis\venv\lib\site-packages (from matplotlib) (3.2.1)
+Requirement already satisfied: regex>=2021.8.3 in c:\users\nagad\onedrive\desktop\twittersentimwnt anlysis\venv\lib\site-packages (from nltk>=3.9->textblob) (2024.11.6)
+Requirement already satisfied: click in c:\users\nagad\onedrive\desktop\twittersentimwnt anlysis\venv\lib\site-packages (from nltk>=3.9->textblob) (8.1.8)
+Requirement already satisfied: tqdm in c:\users\nagad\onedrive\desktop\twittersentimwnt anlysis\venv\lib\site-packages (from nltk>=3.9->textblob) (4.67.1)
+Requirement already satisfied: joblib in c:\users\nagad\onedrive\desktop\twittersentimwnt anlysis\venv\lib\site-packages (from nltk>=3.9->textblob) (1.4.2)
+Requirement already satisfied: six>=1.5 in c:\users\nagad\onedrive\desktop\twittersentimwnt anlysis\venv\lib\site-packages (from python-dateutil>=2.7->matplotlib) (1.17.0)
+Requirement already satisfied: urllib3<3,>=1.21.1 in c:\users\nagad\onedrive\desktop\twittersentimwnt anlysis\venv\lib\site-packages (from requests<3,>=2.27.0->tweepy) (2.3.0)
+Requirement already satisfied: certifi>=2017.4.17 in c:\users\nagad\onedrive\desktop\twittersentimwnt anlysis\venv\lib\site-packages (from requests<3,>=2.27.0->tweepy) (2025.1.31)
+Requirement already satisfied: idna<4,>=2.5 in c:\users\nagad\onedrive\desktop\twittersentimwnt anlysis\venv\lib\site-packages (from requests<3,>=2.27.0->tweepy) (3.10)
+Requirement already satisfied: charset-normalizer<4,>=2 in c:\users\nagad\onedrive\desktop\twittersentimwnt anlysis\venv\lib\site-packages (from requests<3,>=2.27.0->tweepy) (3.4.1)
+Requirement already satisfied: colorama in c:\users\nagad\onedrive\desktop\twittersentimwnt anlysis\venv\lib\site-packages (from click->nltk>=3.9->textblob) (0.4.6)
+Installing collected packages: python-dotenv
+Successfully installed python-dotenv-1.0.1
+
+[notice] A new release of pip available: 22.3.1 -> 25.0.1
+[notice] To update, run: python.exe -m pip install --upgrade pip
+(venv) (base) PS C:\Users\nagad\OneDrive\Desktop\twittersentimwnt anlysis> python main.py
+❌ Twitter Authentication Failed: BaseClient.__init__() got an unexpected keyword argument 'client_id'
+(venv) (base) PS C:\Users\nagad\OneDrive\Desktop\twittersentimwnt anlysis> python main.py
+✅ Twitter Authentication Successful!
+Enter Keyword/Tag to search about: mahesh babu
+Enter how many tweets to search: 200
+Traceback (most recent call last):
+  File "C:\Users\nagad\OneDrive\Desktop\twittersentimwnt anlysis\main.py", line 137, in <module>
+    sa.DownloadData()
+  File "C:\Users\nagad\OneDrive\Desktop\twittersentimwnt anlysis\main.py", line 54, in DownloadData
+    for tweet in self.tweets:
+  File "C:\Users\nagad\OneDrive\Desktop\twittersentimwnt anlysis\venv\lib\site-packages\tweepy\cursor.py", line 86, in __next__
+    return self.next()
+  File "C:\Users\nagad\OneDrive\Desktop\twittersentimwnt anlysis\venv\lib\site-packages\tweepy\cursor.py", line 286, in next
+    self.current_page = next(self.page_iterator)
+  File "C:\Users\nagad\OneDrive\Desktop\twittersentimwnt anlysis\venv\lib\site-packages\tweepy\cursor.py", line 86, in __next__
+    return self.next()
+  File "C:\Users\nagad\OneDrive\Desktop\twittersentimwnt anlysis\venv\lib\site-packages\tweepy\cursor.py", line 167, in next
+    data = self.method(max_id=self.max_id, parser=RawParser(), *self.args, **self.kwargs)
+  File "C:\Users\nagad\OneDrive\Desktop\twittersentimwnt anlysis\venv\lib\site-packages\tweepy\api.py", line 32, in wrapper
+    return method(*args, **kwargs)
+  File "C:\Users\nagad\OneDrive\Desktop\twittersentimwnt anlysis\venv\lib\site-packages\tweepy\api.py", line 45, in wrapper
+    return method(*args, **kwargs)
+  File "C:\Users\nagad\OneDrive\Desktop\twittersentimwnt anlysis\venv\lib\site-packages\tweepy\api.py", line 1221, in search_tweets
+    return self.request(
+  File "C:\Users\nagad\OneDrive\Desktop\twittersentimwnt anlysis\venv\lib\site-packages\tweepy\api.py", line 270, in request
+    raise Forbidden(resp)
+tweepy.errors.Forbidden: 403 Forbidden
+453 - You currently have access to a subset of X API V2 endpoints and limited v1.1 endpoints (e.g. media post, oauth) only. If you need access to this endpoint, you may need a different access level. You can learn more here: https://developer.x.com/en/portal/product
+(venv) (base) PS C:\Users\nagad\OneDrive\Desktop\twittersentimwnt anlysis> python main.py
+Enter Keyword/Tag to search about: mahesh babu
+Enter how many tweets to search: 200
+How people are reacting on mahesh babu by analyzing 200 tweets.
+
+General Report:
+Weakly Positive
+
+Detailed Report:
+17.50% people thought it was positive
+16.50% people thought it was weakly positive
+2.50% people thought it was strongly positive
+2.00% people thought it was negative
+2.00% people thought it was weakly negative
+0.00% people thought it was strongly negative
+9.50% people thought it was neutral
+(venv) (base) PS C:\Users\nagad\OneDrive\Desktop\twittersentimwnt anlysis>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
